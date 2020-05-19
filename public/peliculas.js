@@ -1,13 +1,5 @@
 window.addEventListener("load", function(){
-  // js para el LOGIN
-    if (localStorage.getItem("nombre") == null) {
-        console.log(1);
-  document.querySelector(".peliculaspreferidas").style.display= "none"
-    }
-    else {
-      document.querySelector(".login").innerHTML = "Hola " + localStorage.getItem("nombre")
-      document.querySelector(".peliculaspreferidas").style.display= "block"
-    }
+  
 
     fetch("https://api.themoviedb.org/3/genre/movie/list?api_key=063b16f0b4b52316bdf354da4c0177d7&language=en-US")
     .then(function(response) { return response.json()
