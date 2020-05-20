@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url(https://ak6.picdn.net/shutterstock/videos/1022088616/thumb/1.jpg) ;
+  background-color: black;
 }
 nav{
   background-color: black;
@@ -140,11 +140,12 @@ text-align: center;
 .color{
  color: white;
  font-family: Helvetica;
+ font-size: larger;
 }
 .fotito{
-  width:50%;
+  width:60%;
   border: #1e87f0;
-  border-style: outset;
+  border-style: groove;
 
 }
 
