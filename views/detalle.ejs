@@ -45,6 +45,7 @@
   </div>
 <br>
 
+<br>
   <div class="">
 
     <ul uk-accordion>
@@ -55,13 +56,7 @@
             </div>
         </li>
     </ul>
-<h3 class="color" >Calificación</h3>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star"></span>
-<span class="fa fa-star"></span>
-<br>
+
 <br>
 
 <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-overlay">Ver Recomendaciones</button>
@@ -81,89 +76,91 @@
 </div>
 </div>
 <br>
+
         <div uk-lightbox>
                 <a class="uk-button uk-button-default trailer" href="" data-caption="YouTube">VER TRAILER</a>
         </div>
         <br>
-        <div class="ver-reseñas">
-                <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-reveal">Ver Reseñas</button>
-                <div id="offcanvas-reveal" uk-offcanvas="mode: reveal; overlay: true">
-                    <div class="uk-offcanvas-bar">
-                
-                        <button class="uk-offcanvas-close" type="button" uk-close></button>
-                
-                        <h3>Reseñas</h3>
-                        <li>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>    
-                            <br>
-                            <p>Puntaje:</p>
-                            <br>
-                            <p>Escrita por: Juanito</p>
-                            <br>
-                            <p>Fecha de actualizacion: dd/mm/yy</p>
-                            <hr>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>    
-                            <br>
-                            <p>Puntaje:</p>
-                            <br>
-                            <p>Escrita por: Juanito</p>
-                            <br>
-                            <p>Fecha de actualizacion: dd/mm/yy</p>
-                        </li>
-                
-                    </div>
-                </div>
-            </div>
+<div class="ver-reseñas">
+        <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-reveal">Ver Reseñas</button>
+        <div id="offcanvas-reveal" uk-offcanvas="mode: reveal; overlay: true">
+            <div class="uk-offcanvas-bar">
         
-        <br>
-                <ul uk-accordion>
-                    <li class="uk-close">
-                        <a class="uk-accordion-title color" href="#"> Formulario </a>
-                        <div class="uk-accordion-content">
-            <form action="/home" method="POST">
-                <fieldset class="uk-fieldset">
-            
-                    <div class="uk-margin">
-                        <div class="uk-inline">
-                            <span class="uk-form-icon" uk-icon="icon: user"></span>
-                        <input class="uk-input" type="text" placeholder="Email">
-                    </div>
-                </div>
-                <div class="uk-margin">
-                    <div class="uk-inline">
-                        <span class="uk-form-icon" uk-icon="icon: lock"></span>
-                    <input class="uk-input" type="password" placeholder="Password">
-                </div>
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+        
+                <h3>Reseñas</h3>
+                <li>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>    
+                    <br>
+                    <p>Puntaje:</p>
+                    <br>
+                    <p>Escrita por: Juanito</p>
+                    <br>
+                    <p>Fecha de actualizacion: dd/mm/yy</p>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>    
+                    <br>
+                    <p>Puntaje:</p>
+                    <br>
+                    <p>Escrita por: Juanito</p>
+                    <br>
+                    <p>Fecha de actualizacion: dd/mm/yy</p>
+                </li>
+        
             </div>
-            
-            
-                    <div class="uk-margin">
-                        <textarea class="uk-textarea" rows="5" placeholder="Deja tu reseña"></textarea>
-                    </div>
-              
-            
-                    <div class="uk-margin">
-                        <select class="uk-select">
-                            <label class="uk-form-label" for="form-horizontal-select">Select</label>
-                            <option selected>Puntaje</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                        </select>
-                    </div>
-            
-                </fieldset>
-            </form>
-                        </div>
-                    </li>
-                </ul>
+        </div>
+    </div>
+
+<br>
+        <ul uk-accordion>
+            <li class="uk-close">
+                <a class="uk-accordion-title color" href="#"> Formulario </a>
+                <div class="uk-accordion-content">
+    <form action="/home" method="POST">
+        <fieldset class="uk-fieldset">
+    
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                <input class="uk-input" type="text" placeholder="Email">
+            </div>
+        </div>
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: lock"></span>
+            <input class="uk-input" type="password" placeholder="Password">
+        </div>
+    </div>
+    
+    
+            <div class="uk-margin">
+                <textarea class="uk-textarea" rows="5" placeholder="Deja tu reseña"></textarea>
+            </div>
+      
+    
+            <div class="uk-margin">
+                <select class="uk-select">
+                    <label class="uk-form-label" for="form-horizontal-select">Select</label>
+                    <option selected>Puntaje</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+            </div>
+    
+        </fieldset>
+    </form>
+                </div>
+            </li>
+        </ul>
+
 </div>
 
 <div class="divfoto">
