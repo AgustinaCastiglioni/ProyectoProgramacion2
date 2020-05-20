@@ -31,9 +31,9 @@ window.addEventListener("load", function(){
          h2+= '<a class=generinga href="/genero/?idgenero='+ generos[i].id + '&nombregenero='+ generos[i].name +'">' + "- " + generos[i].name + " -" +'</a>'
        }
 
-          document.querySelector(".infodepelicula").innerHTML+= "<h1 class=color>" +  titulo + "</h1>"
+          document.querySelector(".infodepelicula").innerHTML+= "<h1 class=color> Pelicula:" +  titulo + "</h1>"
           document.querySelector(".infodepelicula").innerHTML+= "<h3 class=color> Idioma: " +  lenguaje + "</h3>"
-          document.querySelector(".infodepelicula").innerHTML+= "<h3 class='color anchitomedia'> Género/os: " +  h2 + "</h3>"
+          document.querySelector(".infodepelicula").innerHTML+= "<h3 class='color anchitomedia'> Géneros: " +  h2 + "</h3>"
           document.querySelector(".uk-accordion-content").innerHTML+= "<p class= color>" + sinopsis + "</p>"
           document.querySelector(".infodepelicula").innerHTML+= "<h3 class= color> Fecha de estreno: " +  fechaestreno + "</h3>"
           document.querySelector(".divfoto").innerHTML+= "<div class=fotodetalle style='position:relative'><a class='estrellita' style='position:absolute' href='' uk-icon='icon:star;ratio:3'></a><img class=fotito src= " + urlposter + imagen + "></div>"
