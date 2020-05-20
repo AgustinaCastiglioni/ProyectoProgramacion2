@@ -1,31 +1,5 @@
 window.addEventListener("load", function(){
 
-  // Obtengo la info de local storage
-  var json = localStorage.getItem("pelisFavoritas")
-
-  // Si ya habia favoritos..
-  if (json != null) {
-    // Desempaquetar el string JSON
-    var objLit = JSON.parse(json)
-
-    // De todo el objeto literal me interesa EL ARRAY
-    var favoritos = objLit.peliculas
-
-  } else {
-    // Si no habia creo el listado como VACIO
-    var favoritos = []
-  }
-
-  if (localStorage.getItem("nombre") == null) {
-      console.log(1);
-document.querySelector(".peliculaspreferidas").style.display= "none"
-  }
-  else {
-    document.querySelector(".login").innerHTML = "Hola " + localStorage.getItem("nombre")
-    document.querySelector(".peliculaspreferidas").style.display= "block"
-  }
-
-
 // agarrar la peli por su id
 
   var queryString = location.search
