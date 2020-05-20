@@ -1,6 +1,26 @@
-
+CREATE DATABASE IF NOT EXISTS `proyecto-programacion-2`;
 USE `proyecto-programacion-2`;
 
+CREATE TABLE IF NOT EXISTS `usuarios` (
+`id` INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+`nombreCompleto` VARCHAR(255) NOT NULL,
+`email` VARCHAR(255) NOT NULL,
+`password` VARCHAR(50) DEFAULT NULL, 
+`fechaNacimiento` DATETIME DEFAULT NULL, 
+`createdAt` DATETIME DEFAULT NULL, 
+`updatedAt`  DATETIME DEFAULT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `resenas` (
+`id` INT(10) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+`peliculaId` VARCHAR(255) NOT NULL,
+`usuarioId` INT(10) UNSIGNED NOT NULL,
+`textoResena` VARCHAR(255) NOT NULL,
+`puntaje` DECIMAL NOT NULL,
+`createdAt` DATETIME DEFAULT NULL, 
+`updatedAt`  DATETIME DEFAULT NULL,
+FOREIGN KEY (usuarioId) REFERENCES usuarios(id)
+);
 
 INSERT INTO `usuarios` (`nombreCompleto`,`email`, `password`, `fechaNacimiento`, `createdAt`, `updatedAt`)
 VALUES
