@@ -4,23 +4,25 @@ const funciones={
 home: function(req,res){
     res.render('home');
 },
-mandarInfo: function(req,res){
-
-   db.Resena.create({
+ chequearQueCoincidaMail: function(req,res){
+        moduloLogin.buscarPorEmail(req.body.mailderesena)
+    .then( resultado => {
        
-        peliculaId:   req.query.idmovie, 
-      textoResena: req.body.resenanueva,
-      puntaje: req.body.puntajecito,
-     
-
-      usuarioId: 2,
- })
-  
-    .then (function (homeController){
-        
-    res.redirect('/home/detalle/?idmovie=' + req.query.idmovie)
-   })
-},
+        if(resultado != array.undefined ){
+            db.Resena.create({
+       
+                peliculaId:   req.query.idmovie, 
+              textoResena: req.body.resenanueva,
+              puntaje: req.body.puntajecito,
+              usuarioId: 2,
+         })   
+        }
+         else{
+           
+            res.redirect('/home/detalle/?idmovie=' + req.query.idmovie)
+         }
+    })
+    },
 
 detalle: function(req,res){
     db.Resena.findAll({
@@ -40,20 +42,8 @@ detalle: function(req,res){
        })
     })
    
-},
-chequearQueCoincidaMail: function(req,res){
-    moduloLogin.chequearUsuario(req.body.mailderesena)
-.then( resultado => {
-    if(resultado != undefined ){
-        res.send(resultado)     
-    }
-     else{
-       
-         res.send('No existe el usuario con ese mail')
-     }
-})
-console.log(resultado)
 }
+
 
 }
 
