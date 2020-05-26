@@ -88,26 +88,26 @@
         
                 <button class="uk-offcanvas-close" type="button" uk-close></button>
         
-                <h3>Reseñas</h3>
-                <li>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>    
-                    <br>
-                    <p>Puntaje:</p>
-                    <br>
-                    <p>Escrita por: Juanito</p>
-                    <br>
-                    <p>Fecha de actualizacion: dd/mm/yy</p>
-                    <hr>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>    
-                    <br>
-                    <p>Puntaje:</p>
-                    <br>
-                    <p>Escrita por: Juanito</p>
-                    <br>
-                    <p>Fecha de actualizacion: dd/mm/yy</p>
-                </li>
+    <h3>Reseñas</h3>
+
+<ul class="sinpunto"> 
+<% for( let i = 0; i < resenas.length; i++ ) { %>
+<li> 
+ <%= resenas[i].textoResena %> 
+  <br>
+  Puntaje: <%= resenas[i].puntaje%> 
+  <br>
+  Fecha de actualizacion: <%= resenas[i].createdAt%> 
+  <br>
+  Escrito por: <%= resenas[i].usuarios.nombreCompleto%> 
+  <br>
+<hr>
+</li>
+<% } %>
+
+</ul>
         
-            </div>
+         </div>
         </div>
     </div>
 
@@ -116,32 +116,32 @@
             <li class="uk-close">
                 <a class="uk-accordion-title color" href="#"> Formulario </a>
                 <div class="uk-accordion-content">
-    <form action="/home" method="POST">
+    <form action="/home/nueva-resena/?idmovie=<%= idmovie %> " method="POST">
         <fieldset class="uk-fieldset">
     
             <div class="uk-margin">
                 <div class="uk-inline">
                     <span class="uk-form-icon" uk-icon="icon: user"></span>
-                <input class="uk-input" type="text" placeholder="Email">
+                <input class="uk-input" type="email" placeholder="Email" name="mailderesena">
             </div>
         </div>
         <div class="uk-margin">
             <div class="uk-inline">
                 <span class="uk-form-icon" uk-icon="icon: lock"></span>
-            <input class="uk-input" type="password" placeholder="Password">
+            <input class="uk-input" type="password" placeholder="Password" name="passwordderesena">
         </div>
     </div>
     
     
             <div class="uk-margin">
-                <textarea class="uk-textarea" rows="5" placeholder="Deja tu reseña"></textarea>
+                <textarea class="uk-textarea" rows="5" placeholder="Deja tu reseña" name="resenanueva"></textarea>
             </div>
       
     
             <div class="uk-margin">
-                <select class="uk-select">
+                <select name="puntajecito" class="uk-select">
                     <label class="uk-form-label" for="form-horizontal-select">Select</label>
-                    <option selected>Puntaje</option>
+                    <option selected disabled>Puntaje</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -156,6 +156,7 @@
             </div>
     
         </fieldset>
+        <button type="submit">ENVIAR</button>
     </form>
                 </div>
             </li>

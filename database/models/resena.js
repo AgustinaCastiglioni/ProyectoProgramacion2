@@ -28,17 +28,16 @@ module.exports = function(sequelize, dataTypes) {
 
     let config = {
         tableName: "resenas",
-        timestamps: false
     }
     
     let Resena = sequelize.define(alias, cols, config);
 
-    //resenas.associate = function(models) {
-    //    resenas.belongsTo(models.usuarios, {
-     //       as: "usuarios",
-         //   foreignKey: "usuarioId"
-       // });
-    //}
+    Resena.associate = function(models) {
+       Resena.belongsTo(models.Usuario, {
+            as: "usuarios",
+          foreignKey: "usuarioId"
+     });
+    }
     return Resena;
 
 }
