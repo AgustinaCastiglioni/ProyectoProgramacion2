@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url(https://ak6.picdn.net/shutterstock/videos/1022088616/thumb/1.jpg) ;
+  background-color: black;
 }
 nav{
   background-color: black;
@@ -49,6 +49,9 @@ margin-bottom: 0;
 .nombres{
   padding-right: 15px;
 }
+.triangulo{
+  align-self: center;
+}
 
 /* boton-genero container */
 .boton-genero {
@@ -82,7 +85,6 @@ font-weight: bold;
 font-family: Helvetica;
 font-size: 1.5em;
 margin-bottom: 2%;
-background-image: url(https://ak7.picdn.net/shutterstock/videos/19062037/thumb/12.jpg);
 border-radius: 5%;
 text-align: center;
 padding-top: 5px;

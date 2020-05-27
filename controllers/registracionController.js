@@ -11,8 +11,6 @@ const funciones={
     
     guardar: function(req,res) {
         let passEncriptada = bcrypt.hashSync(req.body.password, 10) ;
-       // let check = bcrypt.compareSync ('req.body.password', passEncriptada);
-       // console.log(check); // true
     
         db.Usuario.create ({
             nombreCompleto: req.body.nombre ,
@@ -20,8 +18,6 @@ const funciones={
             password: passEncriptada  ,
             fechaNacimiento: req.body.Birthday  ,
             createAt: new Date().toISOString().slice(0, 19).replace('T', ' '),
-         //   movieid: req.query.idmovie
-
 
         })
         .then (function (registracionController){
