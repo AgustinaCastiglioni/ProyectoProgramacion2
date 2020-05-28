@@ -27,7 +27,7 @@ const funciones={
 
     },
     listado: function(req,res) {
-        db.Usuario.FindAll()
+        db.Usuario.findAll()
         .then (function (registracionController){
             res.render('registracion',{usuarios:usuarios})
         })

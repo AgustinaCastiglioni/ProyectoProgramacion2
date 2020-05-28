@@ -52,6 +52,9 @@ margin-bottom: 0;
 .triangulo{
   align-self: center;
 }
+.generos-drop{
+  background-color: black;
+}
 
 /* boton-genero container */
 .boton-genero {

@@ -12,7 +12,7 @@
     <script src="/uikit-3.1.5/js/uikit.min.js"></script>
     <script src="/uikit-3.1.5/js/uikit-icons.min.js"></script>
   <link rel="stylesheet" href="/imagehover.css-master/css/imagehover.min.css">
-    <link rel="stylesheet" href="/bienvenida.css">
+    <link rel="stylesheet" href="/registracion.css">
     <link rel="stylesheet" href="/animate.css">
 
     <!-- FAVICON -->
@@ -30,33 +30,34 @@
 <link rel="icon" type="image/png" sizes="96x96" href="/PAGPELI.ico/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/PAGPELI.ico/favicon-16x16.png">
 <link rel="manifest" href="/PAGPELI.ico/manifest.json">
-<link href="https://fonts.googleapis.com/css?family=Aguafina+Script&display=swap" rel="stylesheet">
+<link href="/https://fonts.googleapis.com/css?family=Aguafina+Script&display=swap" rel="stylesheet">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="PAGPELI.ico/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
   </head>
   <body>
-    <header>
-
-      <h1 style="color:chocolate" class="sumergite" >Registrate</h1>
+    <%-include('./partials/nav') %>
+    <div class="cajaregistro">
+      <h1 style="color:white" class="registrate" >Registrate</h1>
      <form class="FORMLOGIN" action="/registracion" method="POST">
             <div class="uk-inline">
                 <span class="uk-form-icon" uk-icon="icon: user"></span>
                 <input class="uk-input nombreform" type="text" name="nombre" value="" placeholder="Nombre">
             </div>
-  
-            <hr>
-  
+           <br>
+           <br>
             <div class="uk-inline">
                 <span class="uk-form-icon" uk-icon="icon: mail"></span>
                 <input class="uk-input" type="email" name="email" value="" placeholder="Email">
             </div>
-            <hr>
+           <br>
+           <br>
             <div class="uk-inline">
               <span class="uk-form-icon" uk-icon="icon: lock"></span>
               <input class="uk-input" type="password" name="password" value="" placeholder="Contraseña">
           </div>
-          <hr>
+          <br>
+          <br>
           <div class="uk-inline">
               <span class="uk-form-icon" uk-icon="icon: birthday"></span>
               <input class="uk-input birth date" type="date" name="Birthday" value="" placeholder="Fecha de nacimiento">
@@ -81,5 +82,5 @@
     <%-include('./partials/footer') %>
   </body>
 
-
+  <script type="text/javascript" src="/home.js"> </script>
 </html>

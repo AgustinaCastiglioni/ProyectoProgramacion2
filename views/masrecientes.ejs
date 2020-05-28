@@ -34,9 +34,25 @@
 <body>
 
     <%-include('./partials/nav') %>
-    <h1>Hola</h1>
+
+    <h1 class="resenaorganizada" style="color: white;">Reseñas más recientes</h1>
+    
+<%  for( let i = 0; i < resenas.length; i++ ) { %> 
+    <div class="resenaorganizada">
+    ID de pelicula: <%= resenas[i].peliculaId %>
+    <br>
+        Reseña: <%= resenas[i].textoResena %> 
+        <br>
+        Puntaje: <%= resenas[i].puntaje %>
+        <br>
+        Creación de reseña: <%= resenas[i].createdAt %>
+   <hr class="probandoshadow">
+   <br>
+</div>
 
 
+
+<% } %>
 <%-include('./partials/footer') %>   
   
 </body>
