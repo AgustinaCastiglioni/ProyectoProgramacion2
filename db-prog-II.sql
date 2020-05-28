@@ -6,7 +6,8 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 `nombreCompleto` VARCHAR(255) NOT NULL,
 `email` VARCHAR(255) NOT NULL,
 `password` VARCHAR(255) DEFAULT NULL, 
-`fechaNacimiento` DATETIME DEFAULT NULL, 
+`fechaNacimiento` DATETIME DEFAULT NULL,
+`genero_id` VARCHAR(255) NOT NULL,
 `createdAt` DATETIME DEFAULT NULL, 
 `updatedAt`  DATETIME DEFAULT NULL
 );

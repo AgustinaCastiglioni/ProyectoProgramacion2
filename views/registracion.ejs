@@ -62,13 +62,20 @@
               <input class="uk-input birth date" type="date" name="Birthday" value="" placeholder="Fecha de nacimiento">
           </div>
            <hr>
-           <div class="uk-inline">
-            <span class="uk-form-icon" uk-icon="icon: heart"></span>
-            <input class="uk-input generoform" type="text" name="genero" value="" placeholder="Género favorito">
-          </div>
+           <div class="boton-genero">
+            <div class="dropdown">
+                <button class="dropbtn">GÉNEROS
+                <i class="fa fa-caret-down"></i>
+                </button>
+                    <div class="dropdown-content generos-drop">
+        
+                    </div>
+            </div>
+        </div>
+               
           <hr>
     
-      <a href="/home"><button class="uk-button uk-button-primary uk-button-large animated swing infinite">ENTRAR</button></a>
+      <a href="/home"> <button class="uk-button uk-button-primary uk-button-large animated swing infinite">ENTRAR</button></a>
     </div>
   
     <%-include('./partials/footer') %>

@@ -17,6 +17,7 @@ const funciones={
             email:req.body.email ,
             password: passEncriptada  ,
             fechaNacimiento: req.body.Birthday  ,
+            gemero_id: req.body.genero ,
             createAt: new Date().toISOString().slice(0, 19).replace('T', ' '),
 
         })
