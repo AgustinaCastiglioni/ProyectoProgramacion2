@@ -24,6 +24,9 @@
     text-align: center;
     padding-top: 30px;
   }
+  .generos-drop{
+    background-color: black;
+  }
   .buscador{
     position: absolute;
     right:-10%;

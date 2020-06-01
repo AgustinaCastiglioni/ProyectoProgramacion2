@@ -18,6 +18,9 @@ module.exports = function(sequelize, dataTypes) {
         fechaNacimiento: {
             type: dataTypes.DATE
         },
+        generoFavorito: {
+            type: dataTypes.STRING
+        },
         createdAt: {
             type: dataTypes.DATE
         },
