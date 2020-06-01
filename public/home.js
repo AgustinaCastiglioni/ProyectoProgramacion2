@@ -123,6 +123,36 @@ document.querySelector(".populares").innerHTML+= "<li> <a href= /home/detalle/?i
 
 document.querySelector(".generos-drop").innerHTML += "<a href='/genero/?idgenero=" + id + "&nombregenero="+nombres+ "'>" + nombres + "</a>"
 
+
+  }
+
+
+
+    })
+
+    .catch(function(error) { console.log("Error: " + error);
+    })
+
+
+    fetch("https://api.themoviedb.org/3/genre/movie/list?api_key=063b16f0b4b52316bdf354da4c0177d7&language=en-US")
+    .then(function(response) { return response.json()})
+
+    .then(function(info) {
+      console.log('=======');
+      console.log(info);
+      console.log('=======');
+      
+
+  var arrayDeGeneros= info.genres
+
+  for (var i = 0; i < arrayDeGeneros.length; i++) {
+  var nombres = arrayDeGeneros[i].name
+  var id = arrayDeGeneros[i].id
+  var selectGeneros = document.querySelector(".generosregistro");
+
+  selectGeneros.innerHTML += "<option value='" + nombres + "'>" + nombres + "</option>"
+
+
   }
 
 
