@@ -12,6 +12,7 @@ var bienvenidaRouter = require('./routes/bienvenida');
 var registracionRouter = require('./routes/registracion');
 var resenasRouter = require('./routes/resenas');
 var usuarioRouter = require('./routes/usuario');
+var busquedaUsuariosRouter = require('./routes/busquedaUsuarios');
 var app = express();
 
 // view engine setup
@@ -31,6 +32,7 @@ app.use('/bienvenida', bienvenidaRouter);
 app.use('/registracion', registracionRouter);
 app.use('/resenas', resenasRouter);
 app.use('/usuario', usuarioRouter);
+app.use('/searchUsers', busquedaUsuariosRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
