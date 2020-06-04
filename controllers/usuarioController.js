@@ -1,4 +1,5 @@
 let db = require ('../database/models/index');
+let moduloLogin = require('../modulo-login');
 const funciones={
     datosUsuario: function(req,res) {
         db.Usuario.findByPk(req.params.id)
@@ -10,7 +11,11 @@ const funciones={
                
             })
         })
-    }
+    },
+    logUser: function (req,res) {
+        return res.render ('login', {tipo :"log"});
     
-    }
-    module.exports= funciones;
+    },
+
+}
+module.exports= funciones;
