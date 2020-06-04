@@ -12,7 +12,7 @@ let busquedaUsersController = {
             where: {
                 [op.or]: {
                     email: {[op.like]: "%" + req.query.busquedaUsuarios + "%"},
-                    nombreCompleto: {[op.like]: "%" + req.query.busquedaUsuarios + "%"}
+                    nombreCompleto: {[op.like]: "%" + req.query.busquedaUsuarios + "%"},
                 }
             }
             })
