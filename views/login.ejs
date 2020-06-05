@@ -39,11 +39,11 @@
     <%-include('./partials/nav') %>
     <div class="cajaregistro">
       <h1 style="color:white" class="registrate" >LOG IN</h1>
-     <form class="FORMLOGIN" action="/usuario" method="POST">
-            <div class="uk-inline">
-                <span class="uk-form-icon" uk-icon="icon: user"></span>
-                <input class="uk-input nombreform" type="text" name="nombre" value="" placeholder="Nombre">
-            </div>
+     <form class="FORMLOGIN" action="/resenas" method="POST">
+      <div class="uk-inline">
+        <span class="uk-form-icon" uk-icon="icon: mail"></span>
+        <input class="uk-input" type="email" name="email" value="" placeholder="Email">
+    </div>
           
            <br>
             <div class="uk-inline">
@@ -52,7 +52,8 @@
           </div>
           <br>
           
-            
+          <a href="/resenas"> <button class="uk-button uk-button-primary uk-button-large animated swing infinite">ENTRAR</button></a>
+        </form>    
 
   
     <%-include('./partials/footer') %>

@@ -16,6 +16,20 @@ const funciones={
         return res.render ('login', {tipo :"log"});
     
     },
+    confirmUser: function (req,res) {
+        //return res.send (req.body);
+       moduloLogin.validar (req.body.email, req.body.password)
+       .then (
+          resultado => {
+            if(resultado == undefined) {
+               res.redirect ('/usuario/login'); // redirecciona al login
+                } else {
+                 res.redirect ('/usuario/login/' + resultado.id )
+               }
+            }
+        )
+    }
+   // getReviews
 
 }
 module.exports= funciones;
