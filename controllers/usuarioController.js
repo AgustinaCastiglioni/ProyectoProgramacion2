@@ -28,8 +28,19 @@ const funciones={
                }
             }
         )
+    },
+    getReviews: function (req,res) {
+        db.resenas.findAll (
+        {
+            where: [
+                {usuarios_id: req.params.id}
+            ],
+            include: ["usuarios"]
+        })
+        .then (resultado => 
+            res.render ('resenas', {resultado:resultado})
+            )
     }
-   // getReviews
 
 }
 module.exports= funciones;
