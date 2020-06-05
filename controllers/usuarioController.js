@@ -17,23 +17,28 @@ const funciones={
     
     },
     confirmUser: function (req,res) {
-        //return res.send (req.body);
+        moduloLogin.chequearUsuario(req.body.email)
+            .then(resultado => {
+                if (resultado) { 
        moduloLogin.validar (req.body.email, req.body.password)
-       .then (
-          resultado => {
-            if(resultado == undefined) {
+       .then (resultado => {
+            if(resultado == false) {
                res.redirect ('/usuario/login'); // redirecciona al login
                 } else {
-                 res.redirect ('/usuario/resenas/' + resultado.id )
+                 res.redirect ('/usuario/login/' + resultado.id )
                }
-            }
-        )
+            })
+        }
+        else{
+            res.redirect ('/usuario/login');
+        }
+    })
     },
     getReviews: function (req,res) {
         db.Resena.findAll (
         {
             where: [
-                {usuarios_id: req.params.id}
+                {id: req.params.id}
             ],
             include: ["usuarios"]
         })

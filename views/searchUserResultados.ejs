@@ -42,10 +42,10 @@
     <ul> listados de usuarios</ul>
         <% for( let i = 0; i < resultados.length; i++ ) { %>
             <div class="listadoOrganizado"> 
-                Usuario:  <a href="usuario/<%=resultados[i]%>"></a><%= resultados[i].nombreCompleto %></a>
+                Usuario:  <a href="/usuario/<%=resultados[i].id%>"><%= resultados[i].nombreCompleto %></a>
                 <br>
             </a>
-                Email:<a href="usuario/<%=resultados[i]%>"></a> <%= resultados[i].email %>  </a>
+                Email:<a href="/usuario/<%=resultados[i].id%>"> <%= resultados[i].email %>  </a>
                 <br> 
             </a>
             </div>
