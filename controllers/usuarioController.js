@@ -24,13 +24,13 @@ const funciones={
             if(resultado == undefined) {
                res.redirect ('/usuario/login'); // redirecciona al login
                 } else {
-                 res.redirect ('/usuario/login/' + resultado.id )
+                 res.redirect ('/usuario/resenas/' + resultado.id )
                }
             }
         )
     },
     getReviews: function (req,res) {
-        db.resenas.findAll (
+        db.Resena.findAll (
         {
             where: [
                 {usuarios_id: req.params.id}
