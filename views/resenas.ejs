@@ -34,7 +34,23 @@
 <body>
 
     <%-include('./partials/nav') %>
-    <h1>Estas son tus reseñas</h1>
+   <% if (resultado.length == 0) { %>
+    <h1>No has hecho ninguna reseña todavia</h1>
+   <% } else { %>
+    <h1 class="uk-text-center"><%= resultado[0].usuario.nombreCompleto %>'s reviews </h1>
+    <% for(let i = 0; i < resultado.length; i++) { %> 
+        <div>Puntaje: <%= resultado[i].puntaje %> </div>
+        <div><h4><%= resultado[i].textoResena %> </h4></div>
+        <div>
+            <a href="/usuario/resenas/editReview/<%= resultado.[i].id %> "> EDITAR RESEÑA</a>
+            
+            <a href="/usuario/resenas/deleteReview/<%= resultado.[i].id %>"> ELIMINAR RESEÑA</a>
+        </div>
+
+  <%  } %>
+
+
+   
    
 
 <%-include('./partials/footer') %>   

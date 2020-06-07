@@ -30,7 +30,7 @@ const funciones={
             })
         }
         else{
-            res.redirect ('/usuario/login');
+            res.redirect ('/usuario/resenas');
         }
     })
     },
@@ -45,6 +45,61 @@ const funciones={
         .then (resultado => 
             res.render ('resenas', {resultado:resultado})
             )
+    },
+    showEdit: function (req,res) {
+        db.Resena.FindOne(
+            { where: [{id: req.params.id} ]}
+        )
+        .then(resultado => {
+            res.render ('editReview', {resultado:resultado})
+        })
+    },
+    confirmEdit: function (req,res) {
+        moduloLogin.validar (req.body.email, req.body.password)
+        .then (resultado=> {
+            if (resultado != undefined) {
+                db.Resena.update (
+                    {
+                        where: {
+                            id: req.params.id, 
+                        }
+                    }
+                )
+                .then( () => {
+                    db.Resena.findByPk (req.params.id)
+                    .then(
+                        resultado => {
+                            res.redirect ('/usuario/resenas/' + resultado.usuario_id);
+                        }
+                    )
+                }
+
+                )
+            } else {
+                res.redirect ('usuario/resenas/editReview/'+ req.params.id);
+            }
+        })
+    },
+
+    deleteReview: function (req,res) {
+        res.render ('login' , {tipo: 'delete' , deleteId: req.params.id})
+    },
+    confirmDelete: function (req,res) {
+        moduloLogin.validar (req.body.email, req.body.password)
+        .then (resultado=> {
+            if (resultado != null) {
+                db.Resena.destroy (
+                    {
+                        where: {
+                            id: req.params.id, 
+                        }
+                    }
+                )
+                res.redirect('/usuario/resenas/');
+            } else {
+                res.redirect ('usuario/resenas/deleteReview/'+ req.params.id)
+            }
+        })
     }
 
 }
