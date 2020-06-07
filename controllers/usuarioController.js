@@ -30,34 +30,43 @@ const funciones={
             })
         }
         else{
-            res.redirect ('/usuario/resenas');
+            res.redirect ('/usuario/login');
         }
     })
     },
     getReviews: function (req,res) {
-        db.Resena.findAll (
-        {
-            where: [
-                {id: req.params.id}
-            ],
-            include: ["usuarios"]
+        db.Resena.findAll({ 
+     where: 
+          {usuarioId: req.params.id},
+         
+         include: [{
+            association: 'usuarios'
+        }]
         })
-        .then (resultado => 
-            res.render ('resenas', {resultado:resultado})
-            )
+        .then(resultado => {
+            res.render('resenas', {
+                resultado:resultado,
+            })
+        })
+      
+       
     },
     showEdit: function (req,res) {
-        db.Resena.FindOne(
-            { where: [{id: req.params.id} ]}
-        )
-        .then(resultado => {
-            res.render ('editReview', {resultado:resultado})
+        db.Resena.findByPk(req.params.id)
+        .then(resultado=> {
+            res.render('editReview',
+            {
+               resultado: resultado,
+               
+            })
         })
+         
     },
+
     confirmEdit: function (req,res) {
         moduloLogin.validar (req.body.email, req.body.password)
         .then (resultado=> {
-            if (resultado != undefined) {
+            if (resultado == false) {
                 db.Resena.update (
                     {
                         where: {
@@ -65,24 +74,19 @@ const funciones={
                         }
                     }
                 )
-                .then( () => {
-                    db.Resena.findByPk (req.params.id)
-                    .then(
-                        resultado => {
-                            res.redirect ('/usuario/resenas/' + resultado.usuario_id);
+                .then(resultado => {
+                            res.redirect ('/usuario/resenas/' + resultado.id);
                         }
-                    )
-                }
-
-                )
-            } else {
+                    )}
+                    
+                    else {
                 res.redirect ('usuario/resenas/editReview/'+ req.params.id);
             }
         })
     },
 
     deleteReview: function (req,res) {
-        res.render ('login' , {tipo: 'delete' , deleteId: req.params.id})
+        res.render('login' , {tipo: 'delete' , deleteId: req.params.id})
     },
     confirmDelete: function (req,res) {
         moduloLogin.validar (req.body.email, req.body.password)
