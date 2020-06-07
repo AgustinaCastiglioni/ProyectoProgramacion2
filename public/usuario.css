@@ -238,53 +238,53 @@
     background-color: black;
   }
   
-  /* el boton para el menusito */
+  
+/* el boton para el menusito */
+.invisible {
+  display: none;
+  z-index: 9999;
+}
+
+@media only screen and (max-width: 900px) {
+
   .invisible {
+    display: block;
+
+  }
+#altodelmenu {
+  height: 80px;
+}
+
+.loguito{
+  width: 100px;
+}
+/* hacemos desaparecer las cosas que van dentro del menusito */
+  .desaparece {
     display: none;
-    z-index: 9999;
   }
-  
-  @media only screen and (max-width: 900px) {
-  
-    .invisible {
-      display: block;
-  
-    }
-  #altodelmenu {
-    height: 80px;
+
+.dropdown .dropbtn {
+  padding: 12px 8px 12px 4px;
+}
+
+}
+
+@media only screen and (max-width: 600px) {
+  .fontina {
+    font-size: 3em;
   }
-  
-  .loguito{
-    width: 100px;
+  .sumergite {
+    font-size: 2em;
   }
-  /* hacemos desaparecer las cosas que van dentro del menusito */
-    .desaparece {
-      display: none;
-    }
-  
-  .dropdown .dropbtn {
-    padding: 12px 8px 12px 4px;
+
+}
+
+@media only screen and (max-width: 400px) {
+  .fontina {
+    font-size: 2.4em;
   }
-  
+  .sumergite {
+    font-size: 1.4em;
   }
-  
-  @media only screen and (max-width: 600px) {
-    .fontina {
-      font-size: 3em;
-    }
-    .sumergite {
-      font-size: 2em;
-    }
-  
-  }
-  
-  @media only screen and (max-width: 400px) {
-    .fontina {
-      font-size: 2.4em;
-    }
-    .sumergite {
-      font-size: 1.4em;
-    }
-  
-  }
-  
+
+}

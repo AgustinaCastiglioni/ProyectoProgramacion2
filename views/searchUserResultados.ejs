@@ -36,10 +36,10 @@
 
  <%-include('./partials/nav') %>
 
-
     <h1 style="color:white" class="registrate" >Estos son los resultados de tu busqueda</h1>
+    <br>
+    <br>
     <div>
-    <ul> listados de usuarios</ul>
         <% for( let i = 0; i < resultados.length; i++ ) { %>
             <div class="listadoOrganizado"> 
                 Usuario:  <a href="/usuario/<%=resultados[i].id%>"><%= resultados[i].nombreCompleto %></a>
@@ -51,9 +51,15 @@
             </div>
         <% } %>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
 
         <%-include('./partials/footer') %>
 
 
 </body>
+<script type="text/javascript" src="/home.js"> </script>
 </html>

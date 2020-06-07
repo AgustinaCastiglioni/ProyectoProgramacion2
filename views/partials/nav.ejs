@@ -27,7 +27,7 @@
     <div class="dropdown">
 <button class="dropbtn">RESEÑAS  <i class="fa fa-caret-down"></i></button>
 <div class="dropdown-content generos-drop">
-        <a href="/resenas">Mis reseñas</a>
+        <a href="/usuario/login">Mis reseñas</a>
         <a href="/resenas/masrecientes">Reseñas más recientes</a>
         <a href="/resenas/mejorespuntuadas">Reseñas mejor puntuadas</a>
         <a href="/resenas/peorespuntuadas">Reseñas peor puntuadas</a>
@@ -37,24 +37,38 @@
      
 
 <!-- // boton menu media query -->
-
-        <button id="altodelmenu" class="uk-button uk-button-default invisible uk-position-right" type="button" uk-toggle="target: #offcanvas-flip">
+<div class="invisible">
+    <a href="#offcanvas-usage" uk-toggle> <button id="altodelmenu" class="uk-button uk-button-default uk-position-right" type="button" uk-toggle="target: #offcanvas-flip">
           <img style="width:2.2rem" src="https://cdn1.iconfinder.com/data/icons/social-messaging-ui-color/254000/30-512.png" alt="">
         </button>
+       </a>
+        <div id="offcanvas-usage" uk-offcanvas>
+            <div class="uk-offcanvas-bar">
 
-      <div class="uk-navbar-left">
-       <div class="uk-navbar-item itemm">
-           <form class="uk-search uk-search-navbar buscador" action="/busqueda" class="buscador" method="get" >
-               <span uk-search-icon></span>
-               <input class="uk-search-input text" type="search" name="busqueda" value="" placeholder="Buscar...">
-           </form>
-       </div>
-      </div>
+                <div class="uk-navbar-left">
+                    <div class="uk-navbar-item itemm">
+                        <form class="uk-search uk-search-navbar buscador" action="/busqueda" class="buscador" method="get" >
+                            <span uk-search-icon></span>
+                            <input class="uk-search-input text" type="search" name="busqueda" value="" placeholder="Buscar...">
+                        </form>
+                    </div>
+                </div>
+
+                <ul class="uk-navbar-nav">
+                    <li class="peliculaspreferidas">
+                        <a href="/registracion" >
+                            REGISTRARME
+                        </a>
+                    </li>
+                </ul>
+              
+            </div>
+    </div>
 
 
 
-  </div>
-</div>
+  
+
 
 <!-- // termina menu media query -->
 

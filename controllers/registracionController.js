@@ -1,6 +1,6 @@
 let db = require ('../database/models/index');
 const bcrypt = require('bcryptjs');
-
+let moduloLogin = require('../modulo-login');
 const funciones={
     registracion : function(req,res){
         res.render('registracion');
@@ -11,7 +11,13 @@ const funciones={
     
     guardar: function(req,res) {
         let passEncriptada = bcrypt.hashSync(req.body.password, 10) ;
-    
+            moduloLogin.chequearUsuario(req.body.email)
+                .then(resultado => {
+                    if (resultado) {
+                       res.send('Ya existe un usuario registrado con este mail')
+                            
+                           } 
+                           else{
         db.Usuario.create ({
             nombreCompleto: req.body.nombre ,
             email:req.body.email ,
@@ -25,6 +31,8 @@ const funciones={
             res.redirect('/registracion'); 
         })
 
+    }
+})
     },
     listado: function(req,res) {
         db.Usuario.findAll()
