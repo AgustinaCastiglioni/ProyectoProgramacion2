@@ -35,7 +35,53 @@
 
     <%-include('./partials/nav') %>
   
-    <h1> RESEÑA </h1>
+    <h1> EDITA TU RESEÑA </h1>
+    
+   
+
+
+    <form action="/usuario/resenas/editReview/<%= resultado.id %>  " method="POST">
+        <fieldset class="uk-fieldset">
+    
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                <input class="uk-input" type="email" placeholder="Email" name="email">
+            </div>
+        </div>
+        <div class="uk-margin">
+            <div class="uk-inline">
+                <span class="uk-form-icon" uk-icon="icon: lock"></span>
+            <input class="uk-input" type="password" placeholder="Password" name="passwordderesena">
+        </div>
+    </div>
+    
+    
+            <div class="uk-margin">
+                <textarea class="uk-textarea" rows="5" placeholder="Deja tu reseña" name="resenanueva" id="resena" ></textarea>
+            </div>
+      
+    
+            <div class="uk-margin">
+                <select name="puntajecito" class="uk-select">
+                    <label class="uk-form-label" for="form-horizontal-select">Select</label>
+                    <option selected disabled>Puntaje</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+            </div>
+    
+        </fieldset>
+        <button type="submit">ENVIAR</button>
+    </form> 
     
    
 

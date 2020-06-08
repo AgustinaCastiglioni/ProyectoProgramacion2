@@ -48,13 +48,14 @@ const funciones={
        
     },
     showEdit: function (req,res) {
-        db.Resena.findByPk(req.params.id)
+        db.Resena.findOne({
+
+           where: [
+               {id: req.params.id}
+            ]})
         .then(resultado=> {
             res.render('editReview',
-            {
-               resultado: resultado,
-               
-            })
+            {resultado: resultado})
         })
          
     },
@@ -62,12 +63,12 @@ const funciones={
     confirmEdit: function (req,res) {
         moduloLogin.validar (req.body.email, req.body.password)
         .then (resultado=> {
-            if (resultado == false) {
-                db.Resena.update (
-                    {
-                        where: {
-                            id: req.params.id, 
-                        }
+            if (resultado) {
+                db.Resena.update(
+                    {   resena: req.body.resena,
+                        puntaje: req.body.puntaje },
+                        {
+                        where: { usuarioId: req.params.id,  }
                     }
                 )
                 .then(resultado => {
@@ -82,7 +83,7 @@ const funciones={
     },
 
     deleteReview: function (req,res) {
-        res.render('login' , {tipo: 'delete' , deleteId: req.params.id})
+        res.render('deleteReview' , {tipo: 'delete' , deleteId: req.params.id})
     },
     confirmDelete: function (req,res) {
         moduloLogin.validar (req.body.email, req.body.password)
@@ -95,9 +96,10 @@ const funciones={
                         }
                     }
                 )
-                res.redirect('/usuario/resenas/');
+                res.redirect ('/usuario/resenas/deleteReview/'+ req.params.id);
+                
             } else {
-                res.redirect ('/usuario/resenas/deleteReview/'+ req.params.id)
+                res.redirect('/usuario/resenas/')
             }
         })
     },
