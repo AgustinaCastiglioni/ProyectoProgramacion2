@@ -101,7 +101,7 @@ const funciones={
                 )
                 res.redirect('/usuario/resenas/');
             } else {
-                res.redirect ('usuario/resenas/deleteReview/'+ req.params.id)
+                res.redirect ('/usuario/resenas/deleteReview/'+ req.params.id)
             }
         })
     }
