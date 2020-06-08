@@ -12,7 +12,7 @@ const funciones = {
                     moduloLogin.validar(req.body.mailderesena, req.body.passwordderesena)
                     .then(resultado => {
                        if(resultado == false){
-                           console.log('No existe')
+                        res.redirect('/usuario/error/usuario')   
                         
                        } 
                        else{

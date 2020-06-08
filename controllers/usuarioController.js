@@ -23,32 +23,28 @@ const funciones={
        moduloLogin.validar (req.body.email, req.body.password)
        .then (resultado => {
             if(resultado == false) {
-               res.redirect ('/usuario/login'); // redirecciona al login
+               res.redirect ('/usuario/error/usuario');
                 } else {
                  res.redirect ('/usuario/login/' + resultado.id )
                }
             })
         }
         else{
-            res.redirect ('/usuario/login');
+            res.redirect ('/usuario/error/usuario');
         }
     })
     },
     getReviews: function (req,res) {
-        db.Resena.findAll({ 
-     where: 
-          {usuarioId: req.params.id},
-         
-         include: [{
-            association: 'usuarios'
-        }]
-        })
-        .then(resultado => {
-            res.render('resenas', {
-                resultado:resultado,
+            db.Resena.findAll({
+                where: 
+                {usuarioId: req.params.id},
             })
-        })
-      
+            .then(resultado => {
+                console.log(resultado)
+                res.render('resenas', {
+                    resultado:resultado,
+                })
+            })
        
     },
     showEdit: function (req,res) {
@@ -75,7 +71,7 @@ const funciones={
                     }
                 )
                 .then(resultado => {
-                            res.redirect ('/usuario/resenas/' + resultado.id);
+                            res.redirect ('/usuario/resenas/' + resultado.usuarioId);
                         }
                     )}
                     
@@ -104,7 +100,10 @@ const funciones={
                 res.redirect ('/usuario/resenas/deleteReview/'+ req.params.id)
             }
         })
-    }
+    },
+    errorUsuario: function(req,res){
+        res.render('errorUsuario');
+    },
 
 }
 module.exports= funciones;

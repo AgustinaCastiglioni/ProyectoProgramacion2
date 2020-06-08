@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" dir="ltr">
+  <head>
     <meta charset="utf-8">
     <title>BAMovies</title>
-    <title>Title</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/uikit-3.1.5/css/uikit.min.css" />
-    <link rel="stylesheet" href="/uikit-3.1.5/css/uikit.css" />
     <script src="/uikit-3.1.5/js/uikit.min.js"></script>
     <script src="/uikit-3.1.5/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="/detalle.css">
-    <link rel="stylesheet" href="/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="/warpspeed-1.0/warpspeed.min.js"></script>
+    <link rel="stylesheet" href="/errorusuario.css">
+    <link rel="stylesheet" href="/imagehover.css-master/css/imagehover.min.css">
+
     <!-- FAVICON -->
 <link rel="apple-touch-icon" sizes="57x57" href="/PAGPELI.ico/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/PAGPELI.ico/apple-icon-60x60.png">
@@ -28,35 +27,17 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/PAGPELI.ico/favicon-16x16.png">
 <link rel="manifest" href="/PAGPELI.ico/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/PAGPELI.ico/ms-icon-144x144.png">
+<meta name="msapplication-TileImage" content="PAGPELI.ico/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-</head>
-<body>
+  </head>
+  <body>
 
     <%-include('./partials/nav') %>
-    <h1 style="color: white; text-align: center;">Mis Reseñas</h1>
-    <% for(let i = 0; i <resultado.length; i++) { %> 
-<li class="lireseñas">
-    <h4 style="color: aliceblue;"> Puntaje: <%= resultado[i].puntaje %> </h4>
-        <h4 style="color: aliceblue"> Reseña: <%= resultado[i].textoResena %> </h4>
-        <div>
-           <button> <a href="/usuario/resenas/editReview/<%= resultado[i].id %> "> EDITAR RESEÑA</a></button>
-            <br>
-            <button>  <a href="/usuario/resenas/deleteReview/<%= resultado[i].id %>"> ELIMINAR RESEÑA</a></button>
-            <br>
-        </div>
-</li>
 
-<hr>
+<h1 class="errorletra">No se han encontrado resultados</h1>
 
-  <%  } %>
+<%-include('./partials/footer') %>
 
-
-   
-   
-
-<%-include('./partials/footer') %>  
-  
-</body>
-<script type="text/javascript" src="/home.js"> </script>
+  </body>
+<script type="text/javascript" src="/busqueda.js"> </script>
 </html>

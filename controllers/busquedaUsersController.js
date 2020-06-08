@@ -23,7 +23,7 @@ let busquedaUsersController = {
                     })
                 }
                 else {
-                    res.send("no se encontrarón resultados")
+                    res.render('noresults')
                 }
             })
     }

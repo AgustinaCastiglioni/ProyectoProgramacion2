@@ -10,7 +10,7 @@ router.post('/resenas/editReview/:id', controller.confirmEdit); // procesa la ed
 router.get('/resenas/deleteReview/:id', controller.deleteReview);
 router.post('/resenas/deleteReview/:id', controller.confirmDelete);
 router.get('/:id', controller.datosUsuario);
-
+router.get('/error/usuario', controller.errorUsuario);
 
 
 module.exports = router;
