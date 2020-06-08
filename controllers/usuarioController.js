@@ -61,34 +61,47 @@ const funciones={
     },
 
     confirmEdit: function (req,res) {
+        moduloLogin.chequearUsuario(req.body.email)
+        .then(resultado => {
+            if (resultado) {
         moduloLogin.validar (req.body.email, req.body.password)
         .then (resultado=> {
             if (resultado) {
-                db.Resena.update(
-                    {   resena: req.body.resena,
+                db.Resena.update({
+                       textoResena: req.body.resena,
                         puntaje: req.body.puntaje },
-                        {
-                        where: { usuarioId: req.params.id,  }
-                    }
-                )
+               { where: { id: req.params.id
+                }
+                
+            })
                 .then(resultado => {
-                            res.redirect ('/usuario/resenas/' + resultado.usuarioId);
+                    console.log(resultado)
+                    res.redirect('/home');
                         }
                     )}
                     
                     else {
-                res.redirect ('usuario/resenas/editReview/'+ req.params.id);
+                        res.redirect('/usuario/error/usuario');
             }
         })
+    }
+    else{
+        res.redirect('/usuario/error/usuario');
+    }
+})
+    
     },
 
     deleteReview: function (req,res) {
         res.render('deleteReview' , {tipo: 'delete' , deleteId: req.params.id})
     },
     confirmDelete: function (req,res) {
+        moduloLogin.chequearUsuario(req.body.email)
+        .then(resultado => {
+            if (resultado) {
         moduloLogin.validar (req.body.email, req.body.password)
         .then (resultado=> {
-            if (resultado != null) {
+            if (resultado) {
                 db.Resena.destroy (
                     {
                         where: {
@@ -96,13 +109,18 @@ const funciones={
                         }
                     }
                 )
-                res.redirect ('/usuario/resenas/deleteReview/'+ req.params.id);
+                res.redirect('/home');
                 
             } else {
-                res.redirect('/usuario/resenas/')
+                res.redirect('/usuario/error/usuario');
             }
         })
-    },
+    }
+    else{
+        res.redirect('/usuario/error/usuario');
+    }
+    })
+},
     errorUsuario: function(req,res){
         res.render('errorUsuario');
     },

@@ -14,7 +14,7 @@ const funciones={
             moduloLogin.chequearUsuario(req.body.email)
                 .then(resultado => {
                     if (resultado) {
-                       res.send('Ya existe un usuario registrado con este mail')
+                       res.render('yaexiste')
                             
                            } 
                            else{

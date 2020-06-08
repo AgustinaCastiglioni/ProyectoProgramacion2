@@ -30,8 +30,8 @@ const funciones = {
                     }
 
                 else {
-                    console.log('No existe un usuario con ese mail')
-                    res.redirect('/home/detalle/?idmovie=' + req.query.idmovie)
+                   
+                    res.redirect('/usuario/error/usuario')
                 }
             })
     },
