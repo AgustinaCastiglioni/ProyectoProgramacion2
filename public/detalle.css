@@ -12,7 +12,10 @@ nav{
   text-align: center;
   padding-bottom: 5px;
 }
-
+.lireseñas{
+  list-style: none;
+  text-align: center;
+}
 .probandoshadow {
   display:block;
   margin:0 auto;
@@ -40,6 +43,7 @@ nav{
 {
   animation: KARRAnimBefore 1s infinite ease-in-out alternate;
 }
+
 
 
 @keyframes KARRAnim {
